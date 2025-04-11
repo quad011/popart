@@ -1,0 +1,50 @@
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-overflow-scrolling: touch;
+  font-family: "FuturaLight";
+  background-color: theme("colors.purple");
+  color: theme("colors.white");
+  font-size: 4.8vw; // 18px
+  @screen sm {
+    font-size: 2.343vw; //18px
+  }
+  @screen lg {
+    font-size: 1.5625vw; // 30px
+  }
+}
+
+:focus {
+  outline: none;
+}
+
+img,
+video {
+  @apply object-cover;
+}
+
+.clip-path-rounded {
+  clip-path: inset(0 round 1.5rem);
+  @screen lg {
+    clip-path: inset(0 round 3rem);
+  }
+}
+
+.gradient-top-bottom {
+  @apply relative;
+  &--0 {
+    &::after {
+      @apply top-0 #{!important};
+    }
+  }
+  &::after {
+    content: "";
+    @apply absolute left-0 top-[10%] lg:top-[20%] w-screen h-full pointer-events-none;
+    background: rgb(218, 232, 254);
+    background: linear-gradient(
+      180deg,
+      rgba(218, 232, 254, 1) 0%,
+      rgba(218, 232, 254, 0) 100%
+    );
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "format": "custom",
+  "id": "app",
+  "label": "App",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "main_navigation": {
+        "type": "Group",
+        "config": {
+          "label": "Main Navigation",
+          "repeat": true,
+          "fields": {
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "",
+                "select": null,
+                "allowTargetBlank": true,
+                "allowText": true,
+                "repeat": false
+              }
+            }
+          }
+        }
+      }
+    },
+    "Footer": {
+      "city": {
+        "type": "Text",
+        "config": {
+          "label": "City",
+          "placeholder": ""
+        }
+      },
+      "phone": {
+        "type": "Link",
+        "config": {
+          "label": "Phone",
+          "placeholder": "",
+          "select": null,
+          "allowTargetBlank": true,
+          "allowText": true,
+          "repeat": false
+        }
+      },
+      "mail": {
+        "type": "Link",
+        "config": {
+          "label": "Mail",
+          "placeholder": "",
+          "select": null,
+          "allowTargetBlank": true,
+          "allowText": true,
+          "repeat": false
+        }
+      }
+    },
+    "Social": {
+      "socials": {
+        "type": "Group",
+        "config": {
+          "label": "Socials",
+          "repeat": true,
+          "fields": {
+            "item": {
+              "type": "Link",
+              "config": {
+                "label": "item",
+                "placeholder": "",
+                "select": null,
+                "allowTargetBlank": true,
+                "allowText": true,
+                "repeat": false
+              }
+            },
+            "icon": {
+              "type": "Image",
+              "config": {
+                "label": "icon",
+                "constraint": {},
+                "thumbnails": []
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

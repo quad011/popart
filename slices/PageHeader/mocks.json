@@ -1,0 +1,40 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Sit quis dolor sit ad."
+						}
+					}
+				]
+			},
+			"link": {
+				"key": "b337928f-a904-46c9-b2d6-38e2ad8677bf",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://twitter.com",
+					"text": "newspaper"
+				}
+			},
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Eu duis laboris deserunt quis cupidatat dolore ipsum."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
