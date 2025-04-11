@@ -19,7 +19,7 @@ const props = defineProps({
     ]"
   >
     <span
-      class="hamburger-box w-[1.5rem] h-[1rem] relative block focus:outline-none"
+      class="hamburger-box w-[1.5rem] h-[.8rem] relative block focus:outline-none"
     >
       <span class="line line--1"></span>
 

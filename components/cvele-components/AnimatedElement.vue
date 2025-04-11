@@ -30,6 +30,10 @@ const props = defineProps({
     type: Number,
     default: 0,
   },
+  rotate: {
+    type: Number,
+    default: 0,
+  },
 });
 
 // Register GSAP plugin
@@ -50,12 +54,14 @@ onMounted(async () => {
         y: props.fromY,
         x: props.fromX,
         scale: props.fromScale,
+        rotate: 0,
       },
       {
         opacity: 1,
         y: props.toY,
         x: props.toX,
         scale: props.toScale,
+        rotate: props.rotate,
         duration: 1,
         delay: props.delay,
         ease: "power2.out",

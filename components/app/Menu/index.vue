@@ -20,9 +20,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div
-    class="app-menu flex flex-col items-center justify-center bg-purple font-medium"
-  >
+  <div class="app-menu flex flex-col items-center justify-center bg-purple">
     <app-menu-item
       v-for="(item, index) in appData?.data?.main_navigation"
       :key="item.id"

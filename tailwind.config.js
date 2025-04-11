@@ -36,6 +36,9 @@ export default {
         white: "#F9F9F9",
         purple: "#361281",
         green: "#D5FF2F",
+        red: "#FF2473",
+        blue: "#54EEEE",
+        orange: "#FF6F1F",
       },
 
       fontFamily: {
@@ -51,7 +54,19 @@ export default {
           },
         ],
         h1: [
-          "clamp(90px, 3.7666rem, 150px)",
+          "clamp(80px, 3.7666rem, 150px)",
+          {
+            lineHeight: "1.1",
+          },
+        ],
+        h2: [
+          "clamp(60px, 3.1333rem, 110px)",
+          {
+            lineHeight: "1.1",
+          },
+        ],
+        h3: [
+          "clamp(50px, 1.8rem, 70px)",
           {
             lineHeight: "1.1",
           },

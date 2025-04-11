@@ -51,7 +51,7 @@ onMounted(() => {
   transition: 0.4s ease;
   @screen lg {
     &:hover {
-      clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 100% 100%, 10% 100%, 0% 50%);
+      clip-path: polygon(10% 0%, 100% 0%, 100% 50%, 90% 100%, 0% 100%, 0% 50%);
     }
   }
 }

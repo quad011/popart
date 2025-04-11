@@ -28,7 +28,7 @@ onMounted(() => {});
         <!-- LOGO -->
         <nuxt-link to="/" class="cursor-pointer pointer-events-auto">
           <a-logo
-            class="logo w-[20vw] sm:w-[11.3vw] object-contain fill-white"
+            class="logo w-[30vw] sm:w-[11.3vw] object-contain fill-white"
           />
         </nuxt-link>
         <!-- END :: LOGO -->

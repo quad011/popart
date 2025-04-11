@@ -196,7 +196,11 @@ export type PageDefaultDocument<Lang extends string = string> =
     Lang
   >;
 
-type PageHomeDocumentDataSlicesSlice = PageHeaderSlice;
+type PageHomeDocumentDataSlicesSlice =
+  | HeadlineAndBoxesSlice
+  | HeadlineTextAndDecorSlice
+  | ImageComponentSlice
+  | PageHeaderSlice;
 
 /**
  * Content for Page: Home documents
@@ -276,6 +280,188 @@ export type AllDocumentTypes =
   | AppDocument
   | PageDefaultDocument
   | PageHomeDocument;
+
+/**
+ * Item in *HeadlineAndBoxes → Default → Primary → Items*
+ */
+export interface HeadlineAndBoxesSliceDefaultPrimaryItemsItem {
+  /**
+   * Title field in *HeadlineAndBoxes → Default → Primary → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: headline_and_boxes.default.primary.items[].title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Text field in *HeadlineAndBoxes → Default → Primary → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: headline_and_boxes.default.primary.items[].text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *HeadlineAndBoxes → Default → Primary*
+ */
+export interface HeadlineAndBoxesSliceDefaultPrimary {
+  /**
+   * Title field in *HeadlineAndBoxes → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: headline_and_boxes.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Items field in *HeadlineAndBoxes → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: headline_and_boxes.default.primary.items[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  items: prismic.GroupField<
+    Simplify<HeadlineAndBoxesSliceDefaultPrimaryItemsItem>
+  >;
+}
+
+/**
+ * Default variation for HeadlineAndBoxes Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeadlineAndBoxesSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HeadlineAndBoxesSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *HeadlineAndBoxes*
+ */
+type HeadlineAndBoxesSliceVariation = HeadlineAndBoxesSliceDefault;
+
+/**
+ * HeadlineAndBoxes Shared Slice
+ *
+ * - **API ID**: `headline_and_boxes`
+ * - **Description**: HeadlineAndBoxes
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeadlineAndBoxesSlice = prismic.SharedSlice<
+  "headline_and_boxes",
+  HeadlineAndBoxesSliceVariation
+>;
+
+/**
+ * Primary content in *HeadlineTextAndDecor → Default → Primary*
+ */
+export interface HeadlineTextAndDecorSliceDefaultPrimary {
+  /**
+   * Title field in *HeadlineTextAndDecor → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: headline_text_and_decor.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Text field in *HeadlineTextAndDecor → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: headline_text_and_decor.default.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+}
+
+/**
+ * Default variation for HeadlineTextAndDecor Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeadlineTextAndDecorSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HeadlineTextAndDecorSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *HeadlineTextAndDecor*
+ */
+type HeadlineTextAndDecorSliceVariation = HeadlineTextAndDecorSliceDefault;
+
+/**
+ * HeadlineTextAndDecor Shared Slice
+ *
+ * - **API ID**: `headline_text_and_decor`
+ * - **Description**: HeadlineTextAndDecor
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeadlineTextAndDecorSlice = prismic.SharedSlice<
+  "headline_text_and_decor",
+  HeadlineTextAndDecorSliceVariation
+>;
+
+/**
+ * Primary content in *ImageComponent → Default → Primary*
+ */
+export interface ImageComponentSliceDefaultPrimary {
+  /**
+   * Image field in *ImageComponent → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_component.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for ImageComponent Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ImageComponentSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ImageComponentSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ImageComponent*
+ */
+type ImageComponentSliceVariation = ImageComponentSliceDefault;
+
+/**
+ * ImageComponent Shared Slice
+ *
+ * - **API ID**: `image_component`
+ * - **Description**: ImageComponent
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ImageComponentSlice = prismic.SharedSlice<
+  "image_component",
+  ImageComponentSliceVariation
+>;
 
 /**
  * Primary content in *PageHeader → Default → Primary*
@@ -374,6 +560,19 @@ declare module "@prismicio/client" {
       PageHomeDocumentData,
       PageHomeDocumentDataSlicesSlice,
       AllDocumentTypes,
+      HeadlineAndBoxesSlice,
+      HeadlineAndBoxesSliceDefaultPrimaryItemsItem,
+      HeadlineAndBoxesSliceDefaultPrimary,
+      HeadlineAndBoxesSliceVariation,
+      HeadlineAndBoxesSliceDefault,
+      HeadlineTextAndDecorSlice,
+      HeadlineTextAndDecorSliceDefaultPrimary,
+      HeadlineTextAndDecorSliceVariation,
+      HeadlineTextAndDecorSliceDefault,
+      ImageComponentSlice,
+      ImageComponentSliceDefaultPrimary,
+      ImageComponentSliceVariation,
+      ImageComponentSliceDefault,
       PageHeaderSlice,
       PageHeaderSliceDefaultPrimary,
       PageHeaderSliceVariation,

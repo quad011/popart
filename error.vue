@@ -14,10 +14,10 @@ useHead({
 
 <template>
   <div
-    class="error bg-white fixed left-0 top-0 w-full h-full flex flex-col flex-center"
+    class="error fixed left-0 top-0 w-full h-full flex flex-col flex-center py-20"
   >
     <h1
-      class="text-92 md:text-180 lg:text-[25rem] font-medium flex items-center md:mb-5 lg:mb-0"
+      class="text-92 md:text-180 lg:text-[15rem] flex items-center md:mb-5 lg:mb-0"
     >
       <c-animated-element :fromY="50" :toY="0">
         <span>404</span>

@@ -25,6 +25,15 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "headline_and_boxes": {
+              "type": "SharedSlice"
+            },
+            "headline_text_and_decor": {
+              "type": "SharedSlice"
+            },
+            "image_component": {
+              "type": "SharedSlice"
+            },
             "page_header": {
               "type": "SharedSlice"
             }

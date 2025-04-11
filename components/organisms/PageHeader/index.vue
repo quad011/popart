@@ -1,4 +1,6 @@
 <script setup>
+import decorations from "./decorationsConfig";
+
 const props = defineProps({
   title: {
     type: Array,
@@ -19,19 +21,19 @@ onMounted(() => {
 <template>
   <div class="o-page-header flex items-end relative overflow-hidden">
     <div
-      class="relative z-10 px-4 lg:pl-28 lg:pr-20 lg:my-36 flex flex-col sm:items-end"
+      class="relative z-10 px-4 sm:pl-20 lg:pl-28 sm:pr-20 lg:pr-28 my-20 lg:my-36 flex flex-col sm:items-end w-full"
     >
       <!-- TITLE -->
       <c-animated-element :fromY="50" :toY="0">
-        <m-title :title="title" innerClass="text-h1" />
+        <m-title :title="title" innerClass="text-[6.885vw] sm:text-[5.885vw]" />
       </c-animated-element>
       <!-- END :: TITLE -->
 
       <div>
-        <div class="w-4/5 ml-auto mt-7">
+        <div class="sm:w-3/5 lg:w-4/5 ml-auto mt-7">
           <!-- TEXT -->
           <c-animated-element :fromY="50" :toY="0" :delay="0.1">
-            <PrismicRichText :field="text" wrapper="div" class="l" />
+            <PrismicRichText :field="text" wrapper="div" class="content" />
           </c-animated-element>
           <!-- END :: TEXT -->
 
@@ -49,6 +51,34 @@ onMounted(() => {
         </div>
       </div>
     </div>
+
+    <!-- DECORATIONS -->
+    <c-animated-element
+      v-for="(decor, index) in decorations"
+      :key="index"
+      :rotate="decor.rotate"
+      :delay="index * 0.1"
+      :class="`absolute ${decor.class} w-auto`"
+    >
+      <img :src="decor.img" class="w-full h-full object-contain" alt="popart" />
+    </c-animated-element>
+    <!-- END :: DECORATIONS -->
+
+    <!-- LEFT CIRCLE DECORATION -->
+    <div
+      class="absolute left-0 bottom-0 hidden sm:flex flex-wrap w-[3rem] lg:w-[2rem] ml-2"
+    >
+      <div v-for="i in 10" class="w-1/2 p-1">
+        <c-animated-element
+          :fromScale="0"
+          :toScale="1"
+          :delay="index * 1"
+          class="w-[16px] h-[16px] border-[3px] border-red rounded-full"
+        >
+        </c-animated-element>
+      </div>
+    </div>
+    <!-- END :: LEFT CIRCLE DECORATION -->
   </div>
 </template>
 

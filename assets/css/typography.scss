@@ -1,7 +1,8 @@
 .content {
-    p {
-        &:not(:last-child) {
-            @apply mb-5;
-        }
+  p {
+    letter-spacing: -0.04em;
+    &:not(:last-child) {
+      @apply mb-5;
     }
+  }
 }
