@@ -24,20 +24,20 @@ export default defineNuxtConfig({
           path: "/",
         },
 
-        // {
-        //   type: "page_default",
-        //   path: "/:uid",
-        // },
+        {
+          type: "page_default",
+          path: "/:uid",
+        },
 
-        // {
-        //   type: "our_solutions",
-        //   path: "/our-solutions",
-        // },
+        {
+          type: "page_news",
+          path: "/news",
+        },
 
-        // {
-        //   type: "article_solution",
-        //   path: "/our-solutions/:uid",
-        // },
+        {
+          type: "article_news",
+          path: "/news/:uid",
+        },
       ],
     },
   },

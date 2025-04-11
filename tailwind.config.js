@@ -71,6 +71,18 @@ export default {
             lineHeight: "1.1",
           },
         ],
+        h4: [
+          "clamp(30px, 1.466rem, 50px)",
+          {
+            lineHeight: "1.1",
+          },
+        ],
+        small: [
+          "clamp(20px, .933rem, 40px)",
+          {
+            lineHeight: "1.1",
+          },
+        ],
         18: [
           "clamp(14px, .6rem, 30px)",
           {

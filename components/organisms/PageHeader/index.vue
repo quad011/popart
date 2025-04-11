@@ -21,11 +21,11 @@ onMounted(() => {
 <template>
   <div class="o-page-header flex items-end relative overflow-hidden">
     <div
-      class="relative z-10 px-4 sm:pl-20 lg:pl-28 sm:pr-20 lg:pr-28 my-20 lg:my-36 flex flex-col sm:items-end w-full"
+      class="relative z-10 px-4 sm:pl-16 lg:pl-28 sm:pr-16 lg:pr-28 my-20 lg:my-36 flex flex-col sm:items-end w-full"
     >
       <!-- TITLE -->
       <c-animated-element :fromY="50" :toY="0">
-        <m-title :title="title" innerClass="text-[6.885vw] sm:text-[5.885vw]" />
+        <m-title :title="title" innerClass="text-[6.3vw] lg:text-[5.885vw]" />
       </c-animated-element>
       <!-- END :: TITLE -->
 
@@ -66,13 +66,13 @@ onMounted(() => {
 
     <!-- LEFT CIRCLE DECORATION -->
     <div
-      class="absolute left-0 bottom-0 hidden sm:flex flex-wrap w-[3rem] lg:w-[2rem] ml-2"
+      class="absolute left-0 bottom-0 hidden sm:flex flex-wrap w-[3rem] lg:w-[3rem] ml-2"
     >
-      <div v-for="i in 10" class="w-1/2 p-1">
+      <div v-for="i in 10" class="w-1/2 flex items-center justify-center p-1">
         <c-animated-element
           :fromScale="0"
           :toScale="1"
-          :delay="index * 1"
+          :delay="i * 0.1"
           class="w-[16px] h-[16px] border-[3px] border-red rounded-full"
         >
         </c-animated-element>

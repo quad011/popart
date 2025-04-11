@@ -6,8 +6,5 @@ const { getPrimary } = useSlice(props.slice);
 </script>
 
 <template>
-  <o-headline-and-boxes
-    :title="getPrimary('title')"
-    :items="getPrimary('items')"
-  />
+  <o-news-wrapper :title="getPrimary('title')" :items="getPrimary('items')" />
 </template>

@@ -1,22 +1,47 @@
 {
   "format": "page",
-  "id": "page_home",
-  "label": "Page: Home",
-  "repeatable": false,
+  "id": "article_news",
+  "label": "Article News",
+  "repeatable": true,
   "status": true,
   "json": {
     "Main": {
-      "title": {
-        "type": "Text",
-        "config": {
-          "label": "Title",
-          "placeholder": ""
-        }
-      },
       "uid": {
         "type": "UID",
         "config": {
-          "label": "Slug",
+          "label": "UID"
+        }
+      },
+      "title": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Title",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "featured_image": {
+        "type": "Image",
+        "config": {
+          "label": "Featured Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "preview_text": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Preview Text",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "date": {
+        "type": "Date",
+        "config": {
+          "label": "Date",
           "placeholder": ""
         }
       },
@@ -25,18 +50,6 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "news_wrapper": {
-              "type": "SharedSlice"
-            },
-            "headline_and_boxes": {
-              "type": "SharedSlice"
-            },
-            "headline_text_and_decor": {
-              "type": "SharedSlice"
-            },
-            "image_component": {
-              "type": "SharedSlice"
-            },
             "page_header": {
               "type": "SharedSlice"
             }

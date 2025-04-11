@@ -36,7 +36,7 @@ onMounted(() => {});
     </t-gsap>
 
     <!-- SOCIALS -->
-    <div class="fixed right-0 top-[12vw] z-50 hidden flex-col mr-5 lg:flex">
+    <div class="fixed right-0 top-[12vw] z-50 hidden flex-col mr-5 md:flex">
       <c-animated-element
         v-for="(item, index) in appData?.data?.socials"
         :key="index"

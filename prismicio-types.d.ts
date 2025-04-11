@@ -120,6 +120,115 @@ interface AppDocumentData {
 export type AppDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<AppDocumentData>, "app", Lang>;
 
+type ArticleNewsDocumentDataSlicesSlice = PageHeaderSlice;
+
+/**
+ * Content for Article News documents
+ */
+interface ArticleNewsDocumentData {
+  /**
+   * Title field in *Article News*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article_news.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Featured Image field in *Article News*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article_news.featured_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  featured_image: prismic.ImageField<never>;
+
+  /**
+   * Preview Text field in *Article News*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article_news.preview_text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  preview_text: prismic.RichTextField;
+
+  /**
+   * Date field in *Article News*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article_news.date
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#date
+   */
+  date: prismic.DateField;
+
+  /**
+   * Slice Zone field in *Article News*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article_news.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<ArticleNewsDocumentDataSlicesSlice> /**
+   * Meta Title field in *Article News*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: article_news.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Article News*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: article_news.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Article News*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article_news.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * Article News document from Prismic
+ *
+ * - **API ID**: `article_news`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ArticleNewsDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<ArticleNewsDocumentData>,
+    "article_news",
+    Lang
+  >;
+
 type PageDefaultDocumentDataSlicesSlice = PageHeaderSlice;
 
 /**
@@ -197,6 +306,7 @@ export type PageDefaultDocument<Lang extends string = string> =
   >;
 
 type PageHomeDocumentDataSlicesSlice =
+  | NewsWrapperSlice
   | HeadlineAndBoxesSlice
   | HeadlineTextAndDecorSlice
   | ImageComponentSlice
@@ -276,10 +386,88 @@ export type PageHomeDocument<Lang extends string = string> =
     Lang
   >;
 
+type PageNewsDocumentDataSlicesSlice = PageHeaderSlice;
+
+/**
+ * Content for Page: News documents
+ */
+interface PageNewsDocumentData {
+  /**
+   * Title field in *Page: News*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_news.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Slice Zone field in *Page: News*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_news.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<PageNewsDocumentDataSlicesSlice> /**
+   * Meta Title field in *Page: News*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: page_news.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Page: News*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: page_news.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Page: News*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_news.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * Page: News document from Prismic
+ *
+ * - **API ID**: `page_news`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PageNewsDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<PageNewsDocumentData>,
+    "page_news",
+    Lang
+  >;
+
 export type AllDocumentTypes =
   | AppDocument
+  | ArticleNewsDocument
   | PageDefaultDocument
-  | PageHomeDocument;
+  | PageHomeDocument
+  | PageNewsDocument;
 
 /**
  * Item in *HeadlineAndBoxes → Default → Primary → Items*
@@ -464,6 +652,76 @@ export type ImageComponentSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *NewsWrapper → Default → Primary → Items*
+ */
+export interface NewsWrapperSliceDefaultPrimaryItemsItem {
+  /**
+   * item field in *NewsWrapper → Default → Primary → Items*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: news_wrapper.default.primary.items[].item
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  item: prismic.ContentRelationshipField<"article_news">;
+}
+
+/**
+ * Primary content in *NewsWrapper → Default → Primary*
+ */
+export interface NewsWrapperSliceDefaultPrimary {
+  /**
+   * Title field in *NewsWrapper → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: news_wrapper.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Items field in *NewsWrapper → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: news_wrapper.default.primary.items[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  items: prismic.GroupField<Simplify<NewsWrapperSliceDefaultPrimaryItemsItem>>;
+}
+
+/**
+ * Default variation for NewsWrapper Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NewsWrapperSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<NewsWrapperSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *NewsWrapper*
+ */
+type NewsWrapperSliceVariation = NewsWrapperSliceDefault;
+
+/**
+ * NewsWrapper Shared Slice
+ *
+ * - **API ID**: `news_wrapper`
+ * - **Description**: NewsWrapper
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NewsWrapperSlice = prismic.SharedSlice<
+  "news_wrapper",
+  NewsWrapperSliceVariation
+>;
+
+/**
  * Primary content in *PageHeader → Default → Primary*
  */
 export interface PageHeaderSliceDefaultPrimary {
@@ -553,12 +811,18 @@ declare module "@prismicio/client" {
       AppDocumentData,
       AppDocumentDataMainNavigationItem,
       AppDocumentDataSocialsItem,
+      ArticleNewsDocument,
+      ArticleNewsDocumentData,
+      ArticleNewsDocumentDataSlicesSlice,
       PageDefaultDocument,
       PageDefaultDocumentData,
       PageDefaultDocumentDataSlicesSlice,
       PageHomeDocument,
       PageHomeDocumentData,
       PageHomeDocumentDataSlicesSlice,
+      PageNewsDocument,
+      PageNewsDocumentData,
+      PageNewsDocumentDataSlicesSlice,
       AllDocumentTypes,
       HeadlineAndBoxesSlice,
       HeadlineAndBoxesSliceDefaultPrimaryItemsItem,
@@ -573,6 +837,11 @@ declare module "@prismicio/client" {
       ImageComponentSliceDefaultPrimary,
       ImageComponentSliceVariation,
       ImageComponentSliceDefault,
+      NewsWrapperSlice,
+      NewsWrapperSliceDefaultPrimaryItemsItem,
+      NewsWrapperSliceDefaultPrimary,
+      NewsWrapperSliceVariation,
+      NewsWrapperSliceDefault,
       PageHeaderSlice,
       PageHeaderSliceDefaultPrimary,
       PageHeaderSliceVariation,

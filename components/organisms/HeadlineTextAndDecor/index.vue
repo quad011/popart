@@ -14,7 +14,7 @@ onMounted(() => {});
 
 <template>
   <div
-    class="o-headline-text-and-decor flex flex-wrap relative overflow-hidden pt-32 px-40"
+    class="o-headline-text-and-decor flex flex-wrap relative overflow-hidden pt-10 md:pt-20 lg:pt-32 px-4 sm:px-20 lg:px-40"
   >
     <!-- CIRCLE TOP DECORATION -->
     <div
@@ -24,7 +24,7 @@ onMounted(() => {});
         <c-animated-element
           :fromScale="0"
           :toScale="1"
-          :delay="index * 1"
+          :delay="i * 0.1"
           class="w-[22px] h-[22px]"
         >
           <a-octagon class="stroke-blue" />
@@ -41,7 +41,7 @@ onMounted(() => {});
         <c-animated-element
           :fromScale="0"
           :toScale="1"
-          :delay="index * 1"
+          :delay="i * 0.1"
           class="w-[22px] h-[22px]"
         >
           <a-octagon class="stroke-red" />
@@ -50,10 +50,13 @@ onMounted(() => {});
     </div>
     <!-- END :: CIRCLE BOTTOM DECORATION -->
 
-    <div class="w-3/4 pr-10">
+    <div class="w-full md:w-4/5 lg:w-3/4 lg:pr-10">
       <!-- TITLE -->
       <c-animated-element :fromY="50" :toY="0">
-        <m-title :title="title" innerClass="sm:text-h2 mb-5" />
+        <m-title
+          :title="title"
+          innerClass="text-h4 lg:text-h2 tracking-tighter mb-5"
+        />
       </c-animated-element>
       <!-- END :: TITLE -->
 
@@ -64,7 +67,7 @@ onMounted(() => {});
       <!-- END :: TEXT -->
     </div>
 
-    <div class="w-1/4 flex items-center justify-center">
+    <div class="w-1/5 lg:w-1/4 hidden md:flex items-center justify-center">
       <!-- DECORATIONS -->
       <c-animated-element
         v-for="(decor, index) in decorations"

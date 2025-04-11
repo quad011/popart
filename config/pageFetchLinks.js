@@ -1,1 +1,6 @@
-export default ["article_solution.title", "article_solution.featured_image"];
+export default [
+  "article_news.title",
+  "article_news.featured_image",
+  "article_news.preview_text",
+  "article_news.date",
+];

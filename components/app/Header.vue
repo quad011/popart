@@ -28,13 +28,13 @@ onMounted(() => {});
         <!-- LOGO -->
         <nuxt-link to="/" class="cursor-pointer pointer-events-auto">
           <a-logo
-            class="logo w-[30vw] sm:w-[11.3vw] object-contain fill-white"
+            class="logo w-[30vw] sm:w-[18vw] lg:w-[11.3vw] object-contain fill-white"
           />
         </nuxt-link>
         <!-- END :: LOGO -->
 
         <div class="flex items-center">
-          <div class="hidden lg:flex pointer-events-auto font-medium">
+          <div class="hidden md:flex pointer-events-auto font-medium">
             <PrismicLink
               v-for="item in appData?.data?.main_navigation"
               :key="item.key"
@@ -45,7 +45,7 @@ onMounted(() => {});
             </PrismicLink>
           </div>
 
-          <div class="flex justify-end lg:hidden">
+          <div class="flex justify-end md:hidden">
             <app-hamburger
               class="flex justify-end pointer-events-auto"
               :isMenuOpen="isMenuOpen"
