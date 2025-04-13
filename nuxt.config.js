@@ -59,7 +59,7 @@ export default defineNuxtConfig({
 
   image: {
     imgix: {
-      baseURL: "https://images.prismic.io/aion-website/",
+      baseURL: "https://images.prismic.io/popart/",
     },
     domains: ["images.prismic.io"],
   },
