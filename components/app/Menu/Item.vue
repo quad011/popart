@@ -1,4 +1,6 @@
 <script setup>
+import { PrismicLink } from "#components";
+
 const appStore = useAppStore();
 const { isMenuOpen } = storeToRefs(appStore);
 
@@ -29,14 +31,20 @@ const scrollToSection = (hash) => {
 const closeMenu = () => {
   isMenuOpen.value = false;
 };
+
+const { linkResolver } = useLinkResolver();
 </script>
 
 <template>
   <div class="app-menu-item">
     <!-- @click.prevent="scrollToSection(item.link.url)" -->
-    <nuxt-link @click.prevent="closeMenu" :to="item.link.uid" class="text-base">
+    <PrismicLink
+      @click.prevent="closeMenu"
+      :to="linkResolver(item.link)"
+      class="text-base"
+    >
       <span v-html="item.link.text" class="link" />
-    </nuxt-link>
+    </PrismicLink>
   </div>
 </template>
 

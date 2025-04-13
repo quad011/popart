@@ -21,7 +21,7 @@ onMounted(() => {});
     class="o-news-wrapper my-10 px-4 sm:px-16 lg:px-40 mt-10 mb-10 md:mb-20 md:mt-28 lg:mt-40 relative"
   >
     <!-- RIGHT STAR DECORATIONS -->
-    <div class="absolute right-[6vw] -top-[12vw]">
+    <div class="absolute right-[6vw] -top-[12vw]`">
       <c-animated-element
         :rotate="-90"
         :delay="0.1"
