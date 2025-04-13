@@ -3,10 +3,10 @@ export function useLinkResolver() {
     if (!doc || !doc.type) return "/";
 
     switch (doc.type) {
-      case "our_solutions":
-        return "/our-solutions";
-      case "article_solution":
-        return doc.uid ? `/our-solutions/${doc.uid}` : "/our-solutions";
+      case "page_news":
+        return "/news";
+      case "article_news":
+        return doc.uid ? `/news/${doc.uid}` : "/news";
       case "page_default":
         return doc.uid ? `/${doc.uid}` : "/";
       default:

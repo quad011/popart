@@ -10,7 +10,7 @@ onMounted(() => {});
 
 <template>
   <div
-    class="o-image-component overflow-hidden my-10 sm:my-0 px-4 sm:px-20 lg:px-40 relative"
+    class="o-image-component overflow-hidden my-10 md:my-0 px-4 sm:px-16 lg:px-40 relative"
   >
     <!-- IMAGE -->
     <div

@@ -23,8 +23,8 @@
 							[
 								"item",
 								{
-									"__TYPE__": "LinkContent",
 									"key": "5cb909dd-9582-47ec-aa79-ed0c38f42c92",
+									"__TYPE__": "LinkContent",
 									"value": {
 										"__TYPE__": "DocumentLink",
 										"id": "mock_document_id"
@@ -34,6 +34,15 @@
 						]
 					}
 				]
+			},
+			"link": {
+				"__TYPE__": "LinkContent",
+				"key": "031c1a93-d659-499d-8468-d53432d1aec2",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://prismic.io",
+					"text": "football"
+				}
 			}
 		},
 		"items": []

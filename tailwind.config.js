@@ -38,6 +38,7 @@ export default {
         green: "#D5FF2F",
         red: "#FF2473",
         blue: "#54EEEE",
+        blue2: "#54F2F2",
         orange: "#FF6F1F",
       },
 
@@ -48,7 +49,7 @@ export default {
 
       fontSize: {
         base: [
-          "clamp(20px, 1rem, 40px)",
+          "clamp(18px, 1rem, 40px)",
           {
             lineHeight: "1.2",
           },
@@ -77,6 +78,12 @@ export default {
             lineHeight: "1.1",
           },
         ],
+        h5: [
+          "clamp(20px, 1rem, 40px)",
+          {
+            lineHeight: "1.1",
+          },
+        ],
         small: [
           "clamp(20px, .933rem, 40px)",
           {
@@ -84,7 +91,7 @@ export default {
           },
         ],
         18: [
-          "clamp(14px, .6rem, 30px)",
+          "clamp(16px, .6rem, 30px)",
           {
             lineHeight: "1.1",
           },

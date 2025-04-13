@@ -36,11 +36,11 @@ onMounted(() => {
   <component
     :is="linkUrl ? 'a' : 'button'"
     :href="linkUrl"
-    :class="`a-button bg-${btnBg} px-5 lg:px-12 py-3 lg:py-4 flex items-center justify-center pointer-events-auto overflow-hidden`"
+    :class="`a-button bg-${btnBg} px-5 lg:px-12 py-3 flex items-center justify-center pointer-events-auto overflow-hidden`"
   >
     <p
       v-html="title"
-      class="text-14 lg:text-18 text-purple uppercase font-AspergitBold"
+      class="text-14 lg:text-18 text-purple uppercase font-AspergitBold whitespace-nowrap"
     />
   </component>
 </template>

@@ -306,6 +306,7 @@ export type PageDefaultDocument<Lang extends string = string> =
   >;
 
 type PageHomeDocumentDataSlicesSlice =
+  | QuoteComponentSlice
   | NewsWrapperSlice
   | HeadlineAndBoxesSlice
   | HeadlineTextAndDecorSlice
@@ -689,6 +690,16 @@ export interface NewsWrapperSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#group
    */
   items: prismic.GroupField<Simplify<NewsWrapperSliceDefaultPrimaryItemsItem>>;
+
+  /**
+   * Link field in *NewsWrapper → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: news_wrapper.default.primary.link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
 }
 
 /**
@@ -786,6 +797,81 @@ export type PageHeaderSlice = prismic.SharedSlice<
   PageHeaderSliceVariation
 >;
 
+/**
+ * Primary content in *QuoteComponent → Default → Primary*
+ */
+export interface QuoteComponentSliceDefaultPrimary {
+  /**
+   * Name field in *QuoteComponent → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: quote_component.default.primary.name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name: prismic.KeyTextField;
+
+  /**
+   * Caption field in *QuoteComponent → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: quote_component.default.primary.caption
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  caption: prismic.KeyTextField;
+
+  /**
+   * Text field in *QuoteComponent → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: quote_component.default.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+
+  /**
+   * Image field in *QuoteComponent → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: quote_component.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for QuoteComponent Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type QuoteComponentSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<QuoteComponentSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *QuoteComponent*
+ */
+type QuoteComponentSliceVariation = QuoteComponentSliceDefault;
+
+/**
+ * QuoteComponent Shared Slice
+ *
+ * - **API ID**: `quote_component`
+ * - **Description**: QuoteComponent
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type QuoteComponentSlice = prismic.SharedSlice<
+  "quote_component",
+  QuoteComponentSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -846,6 +932,10 @@ declare module "@prismicio/client" {
       PageHeaderSliceDefaultPrimary,
       PageHeaderSliceVariation,
       PageHeaderSliceDefault,
+      QuoteComponentSlice,
+      QuoteComponentSliceDefaultPrimary,
+      QuoteComponentSliceVariation,
+      QuoteComponentSliceDefault,
     };
   }
 }

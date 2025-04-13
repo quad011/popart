@@ -14,7 +14,7 @@ onMounted(() => {});
 
 <template>
   <div
-    class="o-headline-text-and-decor flex flex-wrap relative overflow-hidden pt-10 md:pt-20 lg:pt-32 px-4 sm:px-20 lg:px-40"
+    class="o-headline-text-and-decor flex flex-wrap relative overflow-hidden md:pt-20 lg:pt-32 px-4 sm:px-16 lg:px-40"
   >
     <!-- CIRCLE TOP DECORATION -->
     <div
@@ -55,14 +55,18 @@ onMounted(() => {});
       <c-animated-element :fromY="50" :toY="0">
         <m-title
           :title="title"
-          innerClass="text-h4 lg:text-h2 tracking-tighter mb-5"
+          innerClass="text-h4 md:text-h3 lg:text-h2 tracking-tighter mb-5"
         />
       </c-animated-element>
       <!-- END :: TITLE -->
 
       <!-- TEXT -->
       <c-animated-element :fromY="50" :toY="0" :delay="0.1">
-        <PrismicRichText :field="text" wrapper="div" class="content mb-16" />
+        <PrismicRichText
+          :field="text"
+          wrapper="div"
+          class="content mb-10 lg:mb-16"
+        />
       </c-animated-element>
       <!-- END :: TEXT -->
     </div>

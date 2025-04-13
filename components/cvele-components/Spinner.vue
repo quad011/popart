@@ -1,6 +1,6 @@
 <template>
   <span
-    class="spinner border-4 border-black rounded-[50%] border-b-transparent inline-block box-border w-[48px] h-[48px]"
+    class="spinner border-4 border-white rounded-[50%] border-b-transparent inline-block box-border w-[48px] h-[48px]"
   ></span>
 </template>
 

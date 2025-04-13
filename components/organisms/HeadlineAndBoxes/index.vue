@@ -14,7 +14,7 @@ onMounted(() => {});
 
 <template>
   <div
-    class="o-headline-and-boxes flex flex-wrap relative overflow-hidden pt-10 px-4 sm:px-20 lg:px-40"
+    class="o-headline-and-boxes flex flex-wrap relative overflow-hidden pt-10 px-4 sm:px-16 lg:px-40"
   >
     <!-- OCTAGON DECORATION -->
     <div
@@ -25,9 +25,9 @@ onMounted(() => {});
           :fromScale="0"
           :toScale="1"
           :delay="i * 0.1"
-          class="w-[1.33rem] h-[1.33rem] m-1"
+          class="w-[1.33rem] h-[1.33rem] m-2"
         >
-          <a-octagon class="stroke-blue" />
+          <a-octagon class="stroke-blue2" />
         </c-animated-element>
       </div>
     </div>
@@ -37,20 +37,25 @@ onMounted(() => {});
     <c-animated-element :fromY="50" :toY="0">
       <m-title
         :title="title"
-        innerClass="text-h4 lg:text-h2 tracking-tighter mb-5 md:mb-10"
+        innerClass="text-h4 sm:text-h3 lg:text-h2 tracking-tighter mb-5 md:mb-10"
       />
     </c-animated-element>
     <!-- END :: TITLE -->
 
     <!-- BOXES -->
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-x-4 lg:gap-x-12">
-      <m-box
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:gap-x-4 lg:gap-x-12"
+    >
+      <c-animated-element
+        :fromY="50"
+        :toY="0"
+        :delay="index * 0.1"
         v-for="(item, index) in items"
         :key="index"
-        :title="item.title"
-        :text="item.text"
-        class="mb-5 md:mb-10"
-      />
+        class="mb-8 md:mb-10 last:mb-0"
+      >
+        <m-box :title="item.title" :text="item.text" />
+      </c-animated-element>
     </div>
     <!-- END :: BOXES -->
   </div>

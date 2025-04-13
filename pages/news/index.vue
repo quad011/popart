@@ -6,9 +6,9 @@ import fetchLinks from "@/config/pageFetchLinks";
 
 const { client } = usePrismic();
 
-const { data: page } = await useAsyncData("our_solutions", async () => {
+const { data: page } = await useAsyncData("page_news", async () => {
   try {
-    const document = await client.getSingle("our_solutions", {
+    const document = await client.getSingle("page_news", {
       cache: "no-store",
       fetchLinks,
     });
@@ -35,7 +35,7 @@ usePageMeta(page);
 </script>
 
 <template>
-  <div class="page-our-solution bg-white">
+  <div class="page-news">
     <SliceZone v-once :components="components" :slices="page.data.slices" />
     <AppFooter />
   </div>

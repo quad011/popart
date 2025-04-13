@@ -15,4 +15,7 @@ export const components = defineSliceZoneComponents({
   ),
   news_wrapper: defineAsyncComponent(() => import("./NewsWrapper/index.vue")),
   page_header: defineAsyncComponent(() => import("./PageHeader/index.vue")),
+  quote_component: defineAsyncComponent(
+    () => import("./QuoteComponent/index.vue"),
+  ),
 });

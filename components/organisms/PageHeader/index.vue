@@ -13,9 +13,7 @@ const props = defineProps({
   },
 });
 
-onMounted(() => {
-  console.log("link", props.link);
-});
+onMounted(() => {});
 </script>
 
 <template>
@@ -24,8 +22,11 @@ onMounted(() => {
       class="relative z-10 px-4 sm:pl-16 lg:pl-28 sm:pr-16 lg:pr-28 my-20 lg:my-36 flex flex-col sm:items-end w-full"
     >
       <!-- TITLE -->
-      <c-animated-element :fromY="50" :toY="0">
-        <m-title :title="title" innerClass="text-[6.3vw] lg:text-[5.885vw]" />
+      <c-animated-element :fromY="50" :toY="0" class="mr-auto">
+        <m-title
+          :title="title"
+          innerClass="text-[10vw] sm:text-[6.3vw] lg:text-[5.885vw]"
+        />
       </c-animated-element>
       <!-- END :: TITLE -->
 
