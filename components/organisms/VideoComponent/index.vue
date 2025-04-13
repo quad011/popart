@@ -59,7 +59,7 @@ onMounted(() => {});
       <!-- END :: TITLE -->
 
       <!-- HEXA DECORATION -->
-      <div class="absolute xl:left-[45vw] top-[3vw]">
+      <div class="absolute left-[80vw] xl:left-[45vw] top-[3vw]">
         <c-animated-element
           :fromScale="0"
           :toScale="1"
