@@ -16,8 +16,4 @@ export default {
       "top-[72%] left-[78%] sm:left-[82%] xl:left-[71%] h-[5.93vw] sm:h-[3.93vw]",
     rotate: 90,
   },
-  3: {
-    img: "/svg/arrows.svg",
-    class: "sm:bottom-[10%] left-1/2 -translate-x-1/2 h-[3.93vw] sm:h-[1.6vw]",
-  },
 };

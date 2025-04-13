@@ -18,13 +18,13 @@ onMounted(() => {
 
 <template>
   <div
-    class="o-people-component flex flex-wrap relative my-10 sm:my-20 lg:my-10 px-4 sm:px-16 lg:px-40"
+    class="o-people-component flex flex-wrap relative my-10 sm:my-40 px-4 sm:px-16 lg:px-40"
   >
     <!-- TITLE -->
     <c-animated-element :fromY="50" :toY="0">
       <m-title
         :title="title"
-        innerClass="text-h4 sm:text-h3 lg:text-h2 tracking-tighter mb-5 md:mb-10"
+        innerClass="text-h4 md:text-h3 lg:text-h2 tracking-tighter mb-5 md:mb-10"
       />
     </c-animated-element>
     <!-- END :: TITLE -->

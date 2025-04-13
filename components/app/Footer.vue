@@ -16,7 +16,7 @@ onMounted(() => {});
       class="px-4 py-3 px-4 sm:px-16 lg:px-40 justify-between overflow-hidden"
     >
       <div
-        class="flex flex-wrap sm:justify-between w-full font-medium mb-10 lg:mb-16"
+        class="flex flex-wrap sm:justify-between w-full font-medium mb-10 lg:mb-16 relative"
       >
         <div class="w-full md:w-1/2 flex flex-wrap mb-10 md:mb-0">
           <!-- LOGO -->

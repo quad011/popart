@@ -80,10 +80,11 @@ onMounted(() => {});
       </div>
     </div>
     <!-- END :: LEFT CIRCLE DECORATION -->
+
+    <!-- ANIMATED ARROWS -->
+    <div class="absolute sm:bottom-[10%] left-1/2 -translate-x-1/2">
+      <a-animate-arrows />
+    </div>
+    <!-- END :: ANIMATED ARROWS -->
   </div>
 </template>
-
-<style lang="scss" scoped>
-.o-page-header {
-}
-</style>

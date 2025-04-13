@@ -18,7 +18,7 @@ onMounted(() => {});
       :class="{
         'backdrop-blur-sm': scrollingStarted,
       }"
-      class="app-header px-4 lg:px-20 py-4 lg:py-4 fixed top-0 left-0 w-full z-[100] pointer-events-none"
+      class="app-header px-4 lg:px-20 py-4 lg:py-4 fixed top-0 left-0 w-full z-[100] pointer-events-none transition-all duration-500"
     >
       <c-animated-element
         :fromY="-50"

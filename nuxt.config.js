@@ -76,11 +76,7 @@ export default defineNuxtConfig({
 
   devtools: { enabled: false, suspensible: false },
 
-  plugins: [
-    "./plugins/useSlice.js",
-    "~/plugins/drawMeDirective.js",
-    "./plugins/DrawSVGPlugin.js",
-  ],
+  plugins: ["./plugins/useSlice.js"],
 
   modules: [
     "@nuxtjs/prismic",

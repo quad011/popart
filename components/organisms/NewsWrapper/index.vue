@@ -18,8 +18,47 @@ onMounted(() => {});
 
 <template>
   <div
-    class="o-news-wrapper my-10 px-4 sm:px-16 lg:px-40 mt-10 mb-10 md:mb-20 lg:mt-20 lg:mb-28 relative"
+    class="o-news-wrapper my-10 px-4 sm:px-16 lg:px-40 mt-10 mb-10 md:mb-20 md:mt-28 lg:mt-40 relative"
   >
+    <!-- RIGHT STAR DECORATIONS -->
+    <div class="absolute right-[6vw] -top-[12vw] hidden sm:block">
+      <c-animated-element
+        :rotate="-90"
+        :delay="0.1"
+        class="w-[2.5rem] lg:w-[3.4rem]"
+      >
+        <img
+          src="/svg/star4.svg"
+          class="w-full h-full object-contain"
+          alt="popart"
+        />
+      </c-animated-element>
+    </div>
+    <!-- END :: RIGHT STAR DECORATIONS -->
+
+    <!-- ANIMATED ARROWS -->
+    <div class="absolute -top-[4vw] left-[55vw]">
+      <a-animate-arrows />
+    </div>
+    <!-- END :: ANIMATED ARROWS -->
+
+    <!-- OCTAGON DECORATIONS -->
+    <div
+      class="absolute sm:left-1 -top-0 -translate-y-full hidden sm:flex flex-wrap w-[3rem]"
+    >
+      <div v-for="i in 10" class="w-1/2 flex items-center justify-center">
+        <c-animated-element
+          :fromScale="0"
+          :toScale="1"
+          :delay="i * 0.1"
+          class="w-[.73rem] h-[.73rem] m-1"
+        >
+          <a-octagon class="stroke-blue2" />
+        </c-animated-element>
+      </div>
+    </div>
+    <!-- END :: OCTAGON DECORATIONS -->
+
     <!-- TITLE -->
     <c-animated-element :fromY="50" :toY="0">
       <m-title
@@ -57,5 +96,29 @@ onMounted(() => {});
       </c-animated-element>
     </div>
     <!-- END :: NEWS -->
+
+    <!-- LEFT BOTTOM STAR DECORATIONS -->
+    <div
+      class="absolute left-[2vw] lg:left-[6vw] -bottom-[9vw] lg:-bottom-[7vw] hidden sm:block"
+    >
+      <c-animated-element
+        :rotate="-90"
+        :delay="0.1"
+        class="w-[2.5rem] lg:w-[3.4rem]"
+      >
+        <img
+          src="/svg/star3.svg"
+          class="w-full h-full object-contain"
+          alt="popart"
+        />
+      </c-animated-element>
+    </div>
+    <!-- END :: LEFT BOTTOM STAR DECORATIONS -->
+
+    <!-- ANIMATED ARROWS -->
+    <div class="absolute -bottom-[9vw] lg:-bottom-[7vw] left-[75vw]">
+      <a-animate-arrows />
+    </div>
+    <!-- END :: ANIMATED ARROWS -->
   </div>
 </template>

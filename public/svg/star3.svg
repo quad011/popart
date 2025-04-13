@@ -1,6 +1,6 @@
-<svg viewBox="0 0 102 102" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M70.3251 4.35223H31.685L4.35876 31.6769V70.3231L31.685 97.6478H70.3251L97.6479 70.3231V31.6769L70.3251 4.35223Z" fill="#361281" stroke="#D5FF2F" stroke-width="2" stroke-miterlimit="10"/>
-<path d="M61.8227 24.8771H40.184L24.8823 40.1799V61.82L40.184 77.1228H61.8227L77.1244 61.82V40.1799L61.8227 24.8771Z" fill="#361281" stroke="#D5FF2F" stroke-width="2" stroke-miterlimit="10"/>
+<svg width="102" height="102" viewBox="0 0 102 102" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M70.3251 4.35223H31.685L4.35876 31.6769V70.3231L31.685 97.6478H70.3251L97.6479 70.3231V31.6769L70.3251 4.35223Z" stroke="#D5FF2F" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M61.8227 24.8771H40.184L24.8823 40.1799V61.82L40.184 77.1228H61.8227L77.1244 61.82V40.1799L61.8227 24.8771Z" stroke="#D5FF2F" stroke-width="2" stroke-miterlimit="10"/>
 <path d="M40.0719 24.7616L32.0555 4.35223" stroke="#D5FF2F" stroke-width="2" stroke-miterlimit="10"/>
 <path d="M61.9384 24.7616L70.3184 4.35223" stroke="#D5FF2F" stroke-width="2" stroke-miterlimit="10"/>
 <path d="M32.0555 4.35223L61.9383 24.7616" stroke="#D5FF2F" stroke-width="2" stroke-miterlimit="10"/>

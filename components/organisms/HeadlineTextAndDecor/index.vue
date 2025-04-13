@@ -87,6 +87,8 @@ onMounted(() => {});
         />
       </c-animated-element>
       <!-- END :: DECORATIONS -->
+
+      <a-animate-arrows class="-translate-x-1/2 lg:-translate-x-full" />
     </div>
 
     <div class="w-full">
