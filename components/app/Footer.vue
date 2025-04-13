@@ -18,7 +18,7 @@ onMounted(() => {});
       <div
         class="flex flex-wrap sm:justify-between w-full font-medium mb-10 lg:mb-16"
       >
-        <div class="w-full md:w-1/2 flex flex-wrap">
+        <div class="w-full md:w-1/2 flex flex-wrap mb-10 md:mb-0">
           <!-- LOGO -->
           <c-animated-element :fromY="50" :toY="0" class="w-1/2">
             <nuxt-link
@@ -63,7 +63,7 @@ onMounted(() => {});
             :fromY="50"
             :toY="0"
             :delay="0.3"
-            class="w-full md:w-1/2"
+            class="w-full md:w-1/3"
           >
             <div class="w-full md:w-1/2">
               <div class="flex flex-wrap">

@@ -25,6 +25,15 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "title_and_socials": {
+              "type": "SharedSlice"
+            },
+            "video_component": {
+              "type": "SharedSlice"
+            },
+            "people_component": {
+              "type": "SharedSlice"
+            },
             "quote_component": {
               "type": "SharedSlice"
             },

@@ -306,6 +306,9 @@ export type PageDefaultDocument<Lang extends string = string> =
   >;
 
 type PageHomeDocumentDataSlicesSlice =
+  | TitleAndSocialsSlice
+  | VideoComponentSlice
+  | PeopleComponentSlice
   | QuoteComponentSlice
   | NewsWrapperSlice
   | HeadlineAndBoxesSlice
@@ -798,6 +801,118 @@ export type PageHeaderSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *PeopleComponent → Default → Primary → Items*
+ */
+export interface PeopleComponentSliceDefaultPrimaryItemsItem {
+  /**
+   * Image field in *PeopleComponent → Default → Primary → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: people_component.default.primary.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Title field in *PeopleComponent → Default → Primary → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: people_component.default.primary.items[].title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Text field in *PeopleComponent → Default → Primary → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: people_component.default.primary.items[].text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text: prismic.KeyTextField;
+
+  /**
+   * Link field in *PeopleComponent → Default → Primary → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: people_component.default.primary.items[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+}
+
+/**
+ * Primary content in *PeopleComponent → Default → Primary*
+ */
+export interface PeopleComponentSliceDefaultPrimary {
+  /**
+   * Title field in *PeopleComponent → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: people_component.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Items field in *PeopleComponent → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: people_component.default.primary.items[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  items: prismic.GroupField<
+    Simplify<PeopleComponentSliceDefaultPrimaryItemsItem>
+  >;
+
+  /**
+   * text field in *PeopleComponent → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: people_component.default.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+}
+
+/**
+ * Default variation for PeopleComponent Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PeopleComponentSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<PeopleComponentSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *PeopleComponent*
+ */
+type PeopleComponentSliceVariation = PeopleComponentSliceDefault;
+
+/**
+ * PeopleComponent Shared Slice
+ *
+ * - **API ID**: `people_component`
+ * - **Description**: PeopleComponent
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PeopleComponentSlice = prismic.SharedSlice<
+  "people_component",
+  PeopleComponentSliceVariation
+>;
+
+/**
  * Primary content in *QuoteComponent → Default → Primary*
  */
 export interface QuoteComponentSliceDefaultPrimary {
@@ -872,6 +987,106 @@ export type QuoteComponentSlice = prismic.SharedSlice<
   QuoteComponentSliceVariation
 >;
 
+/**
+ * Primary content in *TitleAndSocials → Default → Primary*
+ */
+export interface TitleAndSocialsSliceDefaultPrimary {
+  /**
+   * Title field in *TitleAndSocials → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: title_and_socials.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+}
+
+/**
+ * Default variation for TitleAndSocials Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TitleAndSocialsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TitleAndSocialsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *TitleAndSocials*
+ */
+type TitleAndSocialsSliceVariation = TitleAndSocialsSliceDefault;
+
+/**
+ * TitleAndSocials Shared Slice
+ *
+ * - **API ID**: `title_and_socials`
+ * - **Description**: TitleAndSocials
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TitleAndSocialsSlice = prismic.SharedSlice<
+  "title_and_socials",
+  TitleAndSocialsSliceVariation
+>;
+
+/**
+ * Primary content in *VideoComponent → Default → Primary*
+ */
+export interface VideoComponentSliceDefaultPrimary {
+  /**
+   * Title field in *VideoComponent → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video_component.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Video field in *VideoComponent → Default → Primary*
+   *
+   * - **Field Type**: Link to Media
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video_component.default.primary.video
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  video: prismic.LinkToMediaField<prismic.FieldState, never>;
+}
+
+/**
+ * Default variation for VideoComponent Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type VideoComponentSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<VideoComponentSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *VideoComponent*
+ */
+type VideoComponentSliceVariation = VideoComponentSliceDefault;
+
+/**
+ * VideoComponent Shared Slice
+ *
+ * - **API ID**: `video_component`
+ * - **Description**: VideoComponent
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type VideoComponentSlice = prismic.SharedSlice<
+  "video_component",
+  VideoComponentSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -932,10 +1147,23 @@ declare module "@prismicio/client" {
       PageHeaderSliceDefaultPrimary,
       PageHeaderSliceVariation,
       PageHeaderSliceDefault,
+      PeopleComponentSlice,
+      PeopleComponentSliceDefaultPrimaryItemsItem,
+      PeopleComponentSliceDefaultPrimary,
+      PeopleComponentSliceVariation,
+      PeopleComponentSliceDefault,
       QuoteComponentSlice,
       QuoteComponentSliceDefaultPrimary,
       QuoteComponentSliceVariation,
       QuoteComponentSliceDefault,
+      TitleAndSocialsSlice,
+      TitleAndSocialsSliceDefaultPrimary,
+      TitleAndSocialsSliceVariation,
+      TitleAndSocialsSliceDefault,
+      VideoComponentSlice,
+      VideoComponentSliceDefaultPrimary,
+      VideoComponentSliceVariation,
+      VideoComponentSliceDefault,
     };
   }
 }

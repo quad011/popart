@@ -1,0 +1,33 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Reprehenderit enim occaecat cupidatat. Tempor eu excepteur ullamco laborum eiusmod velit duis cillum qui. Officia cupidatat laboris incididunt eiusmod consequat nostrud ad ea consectetur nulla."
+						}
+					}
+				]
+			},
+			"video": {
+				"__TYPE__": "LinkContent",
+				"key": "2e44b0a0-6343-4771-b4ee-d5db9645e750",
+				"value": {
+					"__TYPE__": "FileLink",
+					"id": "mock_Media_link",
+					"kind": "file",
+					"name": "mock_name",
+					"url": "https://source.unsplash.com/daily",
+					"size": "0",
+					"text": "serve"
+				}
+			}
+		},
+		"items": []
+	}
+]

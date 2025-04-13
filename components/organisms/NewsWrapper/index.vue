@@ -13,14 +13,12 @@ const props = defineProps({
 
 // const { linkResolver } = useLinkResolver();
 
-onMounted(() => {
-  console.log("link", props.link);
-});
+onMounted(() => {});
 </script>
 
 <template>
   <div
-    class="o-news-wrapper overflow-hidden my-10 sm:my-0 px-4 sm:px-16 lg:px-40 mt-10 mb-10 md:mb-20 lg:mt-40 lg:mb-28 relative"
+    class="o-news-wrapper my-10 px-4 sm:px-16 lg:px-40 mt-10 mb-10 md:mb-20 lg:mt-20 lg:mb-28 relative"
   >
     <!-- TITLE -->
     <c-animated-element :fromY="50" :toY="0">

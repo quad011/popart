@@ -91,7 +91,7 @@ export default {
           },
         ],
         18: [
-          "clamp(16px, .6rem, 30px)",
+          "clamp(14px, .6rem, 30px)",
           {
             lineHeight: "1.1",
           },

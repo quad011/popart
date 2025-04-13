@@ -19,7 +19,7 @@ onMounted(() => {});
 
 <template>
   <div
-    class="o-quote-component overflow-hidden my-10 lg:my-40 px-4 sm:px-16 lg:px-40 relative flex flex-wrap"
+    class="o-quote-component overflow-hidden my-10 sm:my-20 lg:my-40 px-4 sm:px-16 lg:px-40 relative flex flex-wrap"
   >
     <div class="w-full sm:w-1/3 overflow-hidden mb-10 sm:mb-0">
       <!-- IMAGE -->
